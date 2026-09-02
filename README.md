@@ -32,7 +32,7 @@ You can run the site locally by mounting the `public/` directory directly into a
 **macOS / Linux:**
 
 ```bash
-docker run -d \
+docker run --rm \
   --name big-text \
   -p 8080:80 \
   -v "$PWD/public:/usr/share/nginx/html:ro" \
@@ -42,7 +42,7 @@ docker run -d \
 **Windows (PowerShell):**
 
 ```powershell
-docker run -d `
+docker run --rm `
   --name big-text `
   -p 8080:80 `
   -v "${PWD}/public:/usr/share/nginx/html:ro" `
@@ -55,25 +55,3 @@ docker run -d `
 - **Local Network (LAN):** `http://<your-lan-ip>:8080`
 
 Any edits you make inside `public/index.html` will reflect immediately upon refreshing the page.
-
----
-
-### Useful Commands
-
-- **Stop the container:**
-
-  ```bash
-  docker stop big-text
-  ```
-
-- **Restart the container:**
-
-  ```bash
-  docker start big-text
-  ```
-
-- **Remove the container:**
-
-  ```bash
-  docker rm -f big-text
-  ```
